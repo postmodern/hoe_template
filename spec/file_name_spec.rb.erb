@@ -1,0 +1,9 @@
+require '<%= project %>/version'
+
+require 'spec_helper'
+
+describe <%= klass %> do
+  it "should have a VERSION constant" do
+    <%= klass %>.const_defined?('VERSION').should == true
+  end
+end
