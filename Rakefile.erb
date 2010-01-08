@@ -3,7 +3,6 @@
 require 'rubygems'
 require 'hoe'
 require 'hoe/signing'
-require './tasks/spec.rb'
 require './tasks/yard.rb'
 
 Hoe.spec('<%= project %>') do
@@ -11,6 +10,8 @@ Hoe.spec('<%= project %>') do
 
   self.readme_file = 'README.rdoc'
   self.history_file = 'History.rdoc'
+
+  self.rspec_options += ['--colour', '--format', 'specdoc']
 
   self.extra_dev_deps = [
     ['rspec', '>=1.2.9'],
